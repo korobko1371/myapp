@@ -1,0 +1,26 @@
+<h1>Задачи</h1>
+
+<a id="add_todo" href="#"><%= image_tag "addTodoIcon.png" %></a>
+
+<% @projects.each do |project| %>
+	<h2><%= project["title"]  %></h2>
+	<ul>
+	<% project.todos.each do |todo| %>
+  		<li><%= todo["text"] %></li>
+	<% end %>
+	</ul>
+<% end %>
+
+<div id="new_todo">
+	<h3> Новая задача </h3>
+	<%= form_for @tmp do |f|%>
+		<input type="text" name="text"  placeholder="Название задачи..." ><br>
+		<select name="projTitle">
+			<% @projects.each do |project| %>
+				<option> <%= project["title"] %> </option>
+			<% end %>
+		</select><br>
+		<a href="" id="submit_button" >ОК</a>
+		<a href="" id="hide_button" >Отмена</a>
+	<% end %>
+</div>
