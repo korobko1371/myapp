@@ -16,12 +16,12 @@
 #
 default: &default
   adapter: postgresql
-  encoding: unicode
-  pool: 5
+  encoding: UTF8
+  pool: 15
 
   # For details on connection pooling, see Rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  # pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
 development:
   <<: *default
