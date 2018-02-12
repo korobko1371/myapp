@@ -1,3 +1,10 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  get 'todos/index'
+
+  get 'todos/create'
+
+  get 'todos/update'
+
+	resources :projects, :todos
+	root 'projects#index'
 end

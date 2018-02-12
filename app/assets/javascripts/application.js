@@ -9,6 +9,30 @@
 //
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
-//
+//= require jquery
+//= require jquery_ujs
 //= require rails-ujs
-//= require_tree .
+
+$(document).ready(function() {
+	var new_todo = document.getElementById('new_todo');
+	new_todo.style.display = "none";
+	new_todo.style.visibility = "hidden";
+	
+	$("#add_todo").click(function(){
+		new_todo.style.visibility = "visible";
+		new_todo.style.display = "block";
+	});
+	$("#hide_button").click(function(){
+	new_todo.style.display = "none";
+	new_todo.style.visibility = "hidden";
+
+	});
+	$("#submit_button").click(function(event){
+		event.preventDefault();
+		$("form#new_todo").submit();
+	});
+	$("#hide_button").click(function(event){
+		window.location.href = "";
+	});
+
+});
