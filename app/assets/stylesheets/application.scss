@@ -79,10 +79,6 @@
   text-align:center;
 }
 
-#new_todo th:hover{
-  background-color: cyan;
-}
-
 #new_todo .projectTitle{
   text-align:center;
 }
@@ -102,4 +98,21 @@ span {
 
 .select2-selection {
   border-radius: 0 !important;
+}
+
+table{
+   border: 10px;
+}
+
+th{
+  width: 150px;
+  height: 40px;
+  background-color: grey;
+  border-radius: 1px;
+  color: white;
+  border: 10px solid;
+
+}
+#new_todo th:hover{
+  background-color: cyan;
 }
