@@ -3,15 +3,6 @@ class TodosController < ApplicationController
   end
 
   def create
-  	#todo = Todo.new
-	#todo["text"] = params["text"]
-	#todo["isCompleted"] = false
-	#todo.save()
-	#p Project.all["Семья"]
-	#p params["projTitle"]
-  	#p Project.all
-  	#p Project.all[0]["title"] == params["projTitle"]
-
 	todo = Todo.new
 	todo["text"] = params["text"]
 	todo["isCompleted"] = false
@@ -25,5 +16,12 @@ class TodosController < ApplicationController
   end
 
   def update
+	tmp1 = Todo.find(params[:id])
+	if tmp1.isCompleted == true
+		tmp1.update("isCompleted" => false);
+	else
+		tmp1.update("isCompleted" => true);
+	end
+	redirect_to root_path
   end
 end

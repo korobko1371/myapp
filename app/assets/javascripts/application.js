@@ -17,15 +17,15 @@ $(document).ready(function() {
 	var new_todo = document.getElementById('new_todo');
 	new_todo.style.display = "none";
 	new_todo.style.visibility = "hidden";
-	
+
+
 	$("#add_todo").click(function(){
 		new_todo.style.visibility = "visible";
 		new_todo.style.display = "block";
 	});
 	$("#hide_button").click(function(){
-	new_todo.style.display = "none";
-	new_todo.style.visibility = "hidden";
-
+		new_todo.style.display = "none";
+		new_todo.style.visibility = "hidden";
 	});
 	$("#submit_button").click(function(event){
 		event.preventDefault();
@@ -34,5 +34,17 @@ $(document).ready(function() {
 	$("#hide_button").click(function(event){
 		window.location.href = "";
 	});
+	$('input').iCheck({
+	    checkboxClass: 'icheckbox_minimal-blue',
+	    radioClass: 'iradio_minimal-blue',
+	    increaseArea: '20%' // optional
+	});
 
+	$('input').on('ifToggled', function(event){
+	  $(this).closest("form").submit();
+
+	});
+	$('.select2-selection').select2({
+		minimumResultsForSearch: -1
+	});
 });
